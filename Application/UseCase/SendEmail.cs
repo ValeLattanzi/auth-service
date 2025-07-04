@@ -1,8 +1,8 @@
-namespace JWTAuthService.Domain.UseCase;
-
-using JWTAuthService.Domain.Contract;
+using JWTAuthService.Application.Contract;
 using JWTAuthService.Infrastructure.Data;
 using JWTAuthService.Infrastructure.Service;
+
+namespace JWTAuthService.Application.UseCase;
 
 public class SendEmail : ISendEmail
 {

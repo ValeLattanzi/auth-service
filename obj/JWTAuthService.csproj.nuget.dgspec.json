@@ -1,40 +1,34 @@
 {
   "format": 1,
   "restore": {
-    "C:\\SharedLibs\\JWTAuthService\\JWTAuthService.csproj": {}
+    "/home/valentino/Documentos/projects/shared-libs/auth-service/JWTAuthService.csproj": {}
   },
   "projects": {
-    "C:\\SharedLibs\\JWTAuthService\\JWTAuthService.csproj": {
+    "/home/valentino/Documentos/projects/shared-libs/auth-service/JWTAuthService.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\SharedLibs\\JWTAuthService\\JWTAuthService.csproj",
+        "projectUniqueName": "/home/valentino/Documentos/projects/shared-libs/auth-service/JWTAuthService.csproj",
         "projectName": "JWTAuthService",
-        "projectPath": "C:\\SharedLibs\\JWTAuthService\\JWTAuthService.csproj",
-        "packagesPath": "C:\\Users\\Valentino\\.nuget\\packages\\",
-        "outputPath": "C:\\SharedLibs\\JWTAuthService\\obj\\",
+        "projectPath": "/home/valentino/Documentos/projects/shared-libs/auth-service/JWTAuthService.csproj",
+        "packagesPath": "/home/valentino/.nuget/packages/",
+        "outputPath": "/home/valentino/Documentos/projects/shared-libs/auth-service/obj/",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\Valentino\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/home/valentino/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net9.0"
         ],
         "sources": {
-          "C:\\MaxFlex\\VictoriaMaxFlexNet\\SistemaALL\\Packages": {},
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "https://www.nuget.org/api/v2/": {}
+          "/home/valentino/.dotnet/library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net9.0": {
             "targetAlias": "net9.0",
             "projectReferences": {
-              "C:\\SharedLibs\\result-pattern\\result-pattern.csproj": {
-                "projectPath": "C:\\SharedLibs\\result-pattern\\result-pattern.csproj"
+              "/home/valentino/Documentos/projects/shared-libs/result-pattern/result-pattern.csproj": {
+                "projectPath": "/home/valentino/Documentos/projects/shared-libs/result-pattern/result-pattern.csproj"
               }
             }
           }
@@ -49,7 +43,7 @@
           "auditLevel": "low",
           "auditMode": "direct"
         },
-        "SdkAnalysisLevel": "9.0.200"
+        "SdkAnalysisLevel": "9.0.300"
       },
       "frameworks": {
         "net9.0": {
@@ -96,34 +90,28 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.203/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/home/valentino/.dotnet/sdk/9.0.301/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\SharedLibs\\result-pattern\\result-pattern.csproj": {
+    "/home/valentino/Documentos/projects/shared-libs/result-pattern/result-pattern.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\SharedLibs\\result-pattern\\result-pattern.csproj",
+        "projectUniqueName": "/home/valentino/Documentos/projects/shared-libs/result-pattern/result-pattern.csproj",
         "projectName": "result-pattern",
-        "projectPath": "C:\\SharedLibs\\result-pattern\\result-pattern.csproj",
-        "packagesPath": "C:\\Users\\Valentino\\.nuget\\packages\\",
-        "outputPath": "C:\\SharedLibs\\result-pattern\\obj\\",
+        "projectPath": "/home/valentino/Documentos/projects/shared-libs/result-pattern/result-pattern.csproj",
+        "packagesPath": "/home/valentino/.nuget/packages/",
+        "outputPath": "/home/valentino/Documentos/projects/shared-libs/result-pattern/obj/",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\Valentino\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/home/valentino/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net9.0"
         ],
         "sources": {
-          "C:\\MaxFlex\\VictoriaMaxFlexNet\\SistemaALL\\Packages": {},
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "https://www.nuget.org/api/v2/": {}
+          "/home/valentino/.dotnet/library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net9.0": {
@@ -141,7 +129,7 @@
           "auditLevel": "low",
           "auditMode": "direct"
         },
-        "SdkAnalysisLevel": "9.0.200"
+        "SdkAnalysisLevel": "9.0.300"
       },
       "frameworks": {
         "net9.0": {
@@ -162,7 +150,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.203/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/home/valentino/.dotnet/sdk/9.0.301/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

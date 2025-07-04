@@ -1,6 +1,6 @@
-namespace JWTAuthService.Domain.Contract;
-
 using JWTAuthService.Infrastructure.Data;
+
+namespace JWTAuthService.Application.Contract;
 
 public interface ISendEmail
 {

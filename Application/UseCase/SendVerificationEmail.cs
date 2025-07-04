@@ -1,27 +1,44 @@
-using JWTAuthService.Domain.Contract;
-using JWTAuthService.Entity.Class;
+using System.IdentityModel.Tokens.Jwt;
+using System.Security.Claims;
+using System.Text;
+using JWTAuthService.Application.Contract;
 using JWTAuthService.Infrastructure.Data;
-using JWTAuthService.Infrastructure.Repository;
+using Microsoft.Extensions.Configuration;
+using Microsoft.IdentityModel.Tokens;
 using result_pattern;
 
-namespace JWTAuthService.Domain.UseCase;
+namespace JWTAuthService.Application.UseCase;
 
 public class SendVerificationEmail : ISendVerificationEmail {
-	private readonly IGenerateToken _generateToken;
 	private readonly ISendEmail _sendEmail;
+	private readonly IConfiguration _configuration;
 
-	public SendVerificationEmail(IGenerateToken generateToken, ISendEmail sendEmail) {
-		_generateToken = generateToken;
+	public SendVerificationEmail(ISendEmail sendEmail, IConfiguration configuration) {
 		_sendEmail = sendEmail;
+		_configuration = configuration;
 	}
 
-	public async Task<Result> SendEmail(User user,
+	public async Task<Result> SendEmail(string email,
 		SmptConfiguration smptConfiguration,
 		string appName,
 		Uri frontEndUrl,
 		Uri appLogoUrl) {
+		// Define claims for the token
+		var claims = new List<Claim>
+		{
+			new Claim(JwtRegisteredClaimNames.Email, email),
+			new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString())
+		};
 		// 1. Create token
-		var token = _generateToken.GenerateVerificationToken(user.Id, user.Email);
+		var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["Jwt:MailTokenKey"]!));
+		var credentials = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
+
+		var token = new JwtSecurityToken(
+			claims: claims,
+			expires: DateTime.UtcNow.AddMinutes(15),
+			signingCredentials: credentials);
+
+		var emailToken = new JwtSecurityTokenHandler().WriteToken(token);
 
 		// 2. Send email
 		var emailBody = $@"
@@ -50,7 +67,7 @@ public class SendVerificationEmail : ISendVerificationEmail {
   <div style=""font-size: 1.1rem; margin: 1rem 0; text-align: center"">
     <p>Click the link below to verify your email</p>
     <a
-      href=""{frontEndUrl}/auth/verify-email?token={token}""
+      href=""{frontEndUrl}/auth/verify-email?token={emailToken}""
       type=""button""
       style=""
         padding: 0.5rem 1rem;
@@ -67,7 +84,7 @@ public class SendVerificationEmail : ISendVerificationEmail {
   </div>
 </div>
     ";
-		var sendEmailRequest = new SendEmailRequest(user.Email, $"{appName} - Email Verification", emailBody);
+		var sendEmailRequest = new SendEmailRequest(email, $"{appName} - Email Verification", emailBody);
 		await _sendEmail.Notificate(smptConfiguration, sendEmailRequest, appName);
 		return Result.success(true);
 	}

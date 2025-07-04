@@ -1,13 +1,13 @@
-﻿using JWTAuthService.Domain.Contract;
-using Microsoft.Extensions.Configuration;
-using Microsoft.IdentityModel.Tokens;
-using System.IdentityModel.Tokens.Jwt;
+﻿using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
+using JWTAuthService.Application.Contract;
 using JWTAuthService.Errors;
+using Microsoft.Extensions.Configuration;
+using Microsoft.IdentityModel.Tokens;
 using result_pattern;
 
-namespace JWTAuthService.Domain.UseCase;
+namespace JWTAuthService.Application.UseCase;
 
 public class ValidateToken : IValidateToken {
 	private readonly IConfiguration _configuration;

@@ -1,6 +1,6 @@
 ﻿using System.Security.Claims;
 
-namespace JWTAuthService.Domain.Contract;
+namespace JWTAuthService.Application.Contract;
 
 public interface IRefreshAccessToken
 {

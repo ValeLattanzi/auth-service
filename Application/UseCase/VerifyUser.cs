@@ -1,12 +1,9 @@
-using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
-using System.Text;
-using JWTAuthService.Domain.Contract;
+using JWTAuthService.Application.Contract;
 using JWTAuthService.Errors;
-using Microsoft.IdentityModel.Tokens;
 using result_pattern;
 
-namespace JWTAuthService.Domain.UseCase;
+namespace JWTAuthService.Application.UseCase;
 
 public class VerifyUser : IVerifyUser {
 	private readonly IValidateToken _validateToken;

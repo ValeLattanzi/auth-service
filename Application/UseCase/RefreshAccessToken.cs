@@ -1,7 +1,7 @@
-﻿using JWTAuthService.Domain.Contract;
-using System.Security.Claims;
+﻿using System.Security.Claims;
+using JWTAuthService.Application.Contract;
 
-namespace JWTAuthService.Domain.UseCase;
+namespace JWTAuthService.Application.UseCase;
 
 public class RefreshAccessToken : IRefreshAccessToken
 {

@@ -1,13 +1,13 @@
-﻿using JWTAuthService.Domain.Contract;
-using Microsoft.IdentityModel.Tokens;
-using System.IdentityModel.Tokens.Jwt;
+﻿using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
+using JWTAuthService.Application.Contract;
+using Microsoft.Extensions.Configuration;
+using Microsoft.IdentityModel.Tokens;
 
-namespace JWTAuthService.Domain.UseCase;
+namespace JWTAuthService.Application.UseCase;
 
-public class GenerateToken : IGenerateToken
-{
+public sealed class GenerateToken : IGenerateToken {
 
     public string GenerateAccessToken(List<Claim> claims, string accessKey)
     {        // 1.- Generar el AccessToken
@@ -46,25 +46,5 @@ public class GenerateToken : IGenerateToken
     {
         var _token = tokenHandler.CreateToken(tokenDescriptor);
         return tokenHandler.WriteToken(_token);
-    }
-
-    public string GenerateVerificationToken(Guid userId, string email)
-    {
-        var verificationSecretKey = "";
-        var tokenHandler = new JwtSecurityTokenHandler();
-        var key = Encoding.ASCII.GetBytes(verificationSecretKey); // TODO : implement a secret key to encrypt the token
-        var tokenDescriptor = new SecurityTokenDescriptor()
-        {
-            Subject = new ClaimsIdentity(
-            [
-                new Claim("userId", userId.ToString()),
-                new Claim("email", email)
-            ]),
-            Expires = DateTime.UtcNow.AddMinutes(10),
-            SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature)
-        };
-
-        var token = tokenHandler.CreateToken(tokenDescriptor);
-        return tokenHandler.WriteToken(token);
     }
 }
