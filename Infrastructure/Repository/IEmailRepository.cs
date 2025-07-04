@@ -1,4 +1,5 @@
-using JWTAuthService.Infrastructure.Data;
+using JWTAuthService.Infrastructure.Requests;
+using JWTAuthService.Shared.Configuration;
 using MailKit.Net.Smtp;
 using result_pattern;
 

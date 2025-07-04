@@ -1,6 +1,7 @@
 using JWTAuthService.Application.Contract;
-using JWTAuthService.Infrastructure.Data;
+using JWTAuthService.Infrastructure.Requests;
 using JWTAuthService.Infrastructure.Service;
+using JWTAuthService.Shared.Configuration;
 
 namespace JWTAuthService.Application.UseCase;
 

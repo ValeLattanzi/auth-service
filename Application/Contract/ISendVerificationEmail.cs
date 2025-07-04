@@ -1,5 +1,4 @@
-
-using JWTAuthService.Infrastructure.Data;
+using JWTAuthService.Shared.Configuration;
 using result_pattern;
 
 namespace JWTAuthService.Application.Contract;

@@ -1,6 +1,7 @@
 using JWTAuthService.Errors;
-using JWTAuthService.Infrastructure.Data;
 using JWTAuthService.Infrastructure.Repository;
+using JWTAuthService.Infrastructure.Requests;
+using JWTAuthService.Shared.Configuration;
 using MailKit.Security;
 using Microsoft.Extensions.Configuration;
 using MimeKit;

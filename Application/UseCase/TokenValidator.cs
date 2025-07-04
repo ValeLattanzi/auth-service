@@ -1,10 +1,11 @@
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
+using JWTAuthService.Application.Contract;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.IdentityModel.Tokens;
 
-namespace JWTAuthService.Infrastructure.Service;
+namespace JWTAuthService.Application.UseCase;
 
 public class TokenValidator : ITokenValidator {
   public AuthenticateResult ValidateToken(string token, string key, string schemeName)

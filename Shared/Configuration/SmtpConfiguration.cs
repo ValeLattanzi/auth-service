@@ -1,4 +1,4 @@
-namespace JWTAuthService.Infrastructure.Data;
+namespace JWTAuthService.Shared.Configuration;
 
 public record class SmptConfiguration(
   string Host,

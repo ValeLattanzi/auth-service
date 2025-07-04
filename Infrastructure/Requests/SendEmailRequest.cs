@@ -1,6 +1,6 @@
 using System.ComponentModel.DataAnnotations;
 
-namespace JWTAuthService.Infrastructure.Data;
+namespace JWTAuthService.Infrastructure.Requests;
 
 public sealed record class SendEmailRequest(
   [Required(ErrorMessage = "The 'To' field is required.")]
